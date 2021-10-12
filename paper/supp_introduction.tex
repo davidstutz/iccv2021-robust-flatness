@@ -1,0 +1,16 @@
+\section{Overview}
+
+In the main paper, we empirically studied the connection between adversarial robustness (in terms of the \emph{robust} loss \RCE, \ie, the cross-entropy loss on adversarial examples) and flatness of the \RCE landscape \wrt changes in the weight space. In this context, we also consider the phenomenon of robust overfitting \cite{RiceICML2020}, \ie, that robustness on training examples increases consistently throughout training while robustness on test examples eventually \emph{decreases}. Based on average- and worst-case metrics of flatness in \RCE, which we ensure to be scale-invariant,  we show a \textbf{clear relationship between adversarial robustness and flatness}. This takes into account many popular variants of adversarial training (AT), \ie, training on adversarial examples: TRADES \cite{ZhangICML2019}, MART \cite{WangICLR2020}, AT-AWP \cite{WuNIPS2020} AT with self-supervision \cite{HendrycksNIPS2019} or additional unlabeled examples \cite{CarmonNIPS2019}. All of them improve adversarial robustness \emph{and} flatness. Vice versa, approaches known to improve flatness, \eg, Entropy-SGD \cite{ChaudhariICLR2017}, weight clipping \cite{StutzMLSYS2021} or weight averaging \cite{GowalARXIV2020} also improve adversarial robustness. Finally, we found that even simple regularization schemes, \eg, AutoAugment \cite{CubukARXIV2018}, weight decay or label noise, also improve robustness by finding flatter minima.
+
+\subsection{Contents}
+
+This supplementary material is organized as follows:
+\begin{itemize}
+	\item \secref{sec:supp-related-work}: additional discussion of \textbf{related work}.
+	\item \secref{sec:supp-visualization}: details on \textbf{\RCE landscape visualization} and comparison to \cite{LiNIPS2018} (\cf \figref{fig:supp-visualization} and \ref{fig:supp-visualization-li}).
+	\item \secref{sec:supp-flatness-computation}: details on how to \textbf{compute our average- and worst-case flatness measures}, including ablation studies in \secref{sec:supp-flatness-ablation} (\cf \figref{fig:supp-flatness-epochs}, \ref{fig:supp-flatness-misc} and \ref{fig:supp-flatness-ablation}).
+	\item \secref{sec:supp-scaling}: discussion of \textbf{scale-invariance} of our visualization and flatness measures (\cf \figref{fig:supp-scaling} and \tabref{tab:supp-convexity}).
+	\item \secref{sec:supp-setup}: specifics on our \textbf{experimental setup} (training and evaluation details).
+	\item \secref{sec:supp-methods}: discussion of all individual \textbf{methods}, including ablation regarding hyper-parameters in \secref{sec:supp-methods-ablation} (\cf \figref{fig:supp-ii-pll} and \ref{fig:supp-training-ablation}) and flatness in \secref{sec:supp-methods-flatness} (\cf \figref{fig:supp-methods-flatness-epochs} and \ref{fig:supp-flatness-methods}). Training curves for all methods in \figref{fig:supp-training-curves}.
+	\item \secref{sec:supp-results}: all \textbf{results in tabular form} (\tabref{tab:supp-table-robustbench-error}, \ref{tab:supp-table-robustbench-loss}, \ref{tab:supp-table-loss}, \ref{tab:supp-table-error})
+\end{itemize}
